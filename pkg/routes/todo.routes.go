@@ -12,4 +12,5 @@ func TodoRouter(r *gin.RouterGroup, h *services.Handler) {
 	r.PATCH("/update/:id", h.UpdateTodo)
 	r.DELETE("/delete/:id", h.DeleteTodo)
 	r.POST("/parse/csv", h.ParseCsv)
+	r.GET("/health", h.HealthCheck)
 }

@@ -248,3 +248,12 @@ func (db Handler) ParseCsv(c *gin.Context) {
 	// Return the formatted table
 	c.String(http.StatusOK, builder.String())
 }
+
+func (db Handler) HealthCheck(c *gin.Context) {
+	c.IndentedJSON(
+		http.StatusOK,
+		gin.H{
+			"message": "Server is up and running...🚀",
+		},
+	)	
+}
